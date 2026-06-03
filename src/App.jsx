@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ShopProvider } from './context/ShopContext';
 import CatalogPage from './pages/CatalogPage';
 import ProductDetailPage from './pages/ProductDetailPage';
@@ -6,12 +6,12 @@ import ProductDetailPage from './pages/ProductDetailPage';
 /**
  * Кореневий компонент застосунку.
  * Обгортає всі сторінки в ShopProvider (спільний стан кошика та обраного)
- * та BrowserRouter (маршрутизація).
+ * та HashRouter (маршрутизація через # для сумісності з GitHub Pages).
  */
 export default function App() {
   return (
     <ShopProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           {/* Головна — каталог */}
           <Route path="/" element={<CatalogPage />} />
@@ -19,7 +19,7 @@ export default function App() {
           {/* Сторінка товару за id */}
           <Route path="/product/:id" element={<ProductDetailPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ShopProvider>
   );
 }

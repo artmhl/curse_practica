@@ -1,16 +1,65 @@
-# React + Vite
+# 🛍️ ShopReact — Вебзастосунок для перегляду товарів
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Навчальний проєкт** виконаний в рамках курсової практики з веброзробки.
 
-Currently, two official plugins are available:
+🔗 **Демо:** [https://artmhl.github.io/curse_practica/](https://artmhl.github.io/curse_practica/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 Про проєкт
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Цей застосунок — мій перший повноцінний React-проєкт, розроблений як завдання з практики. Він являє собою інтернет-магазин із двома сторінками: каталогом товарів та детальною сторінкою кожного товару.
 
-## Expanding the ESLint configuration
+Дані завантажуються з відкритого API [FakeStoreAPI](https://fakestoreapi.com/) — безкоштовного сервісу з тестовими даними для навчальних проєктів.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Що вміє застосунок
+
+- 📦 Відображає каталог товарів у вигляді адаптивної сітки
+- 🏷️ Фільтрує товари за категоріями (Одяг, Електроніка, Ювелірні вироби)
+- 🔍 Показує детальну сторінку товару з описом, рейтингом, технічними характеристиками та статусом наявності
+- 🛒 Дозволяє додавати товари до кошика з лічильником у шапці
+- ❤️ Підтримує список обраних товарів зі збереженням стану між сторінками
+
+## 🛠️ Технологічний стек
+
+| Технологія | Призначення |
+|---|---|
+| React 18 | Основна бібліотека для побудови UI |
+| React Router v6 | Маршрутизація між сторінками (`useParams`) |
+| Tailwind CSS v4 | Адаптивна стилізація |
+| React Context API | Глобальний стан кошика та обраного |
+| FakeStoreAPI | Джерело тестових даних |
+| Lucide React | Іконки |
+| Vite | Збірник та сервер розробки |
+
+## 📂 Структура проєкту
+
+```
+src/
+├── context/
+│   └── ShopContext.jsx       # Глобальний стан (кошик + обране)
+├── components/
+│   ├── Button.jsx            # Перевикористовуваний компонент кнопки
+│   ├── Header.jsx            # Шапка з лічильниками
+│   ├── Layout.jsx            # Обгортка сторінок
+│   └── ProductCard.jsx       # Картка товару в каталозі
+├── pages/
+│   ├── CatalogPage.jsx       # Головна сторінка каталогу
+│   └── ProductDetailPage.jsx # Детальна сторінка товару
+└── App.jsx                   # Маршрутизатор
+```
+
+## 🚀 Запуск локально
+
+```bash
+git clone https://github.com/artmhl/curse_practica.git
+cd curse_practica
+npm install
+npm run dev
+```
+
+Відкрий [http://localhost:5173/curse_practica/](http://localhost:5173/curse_practica/) у браузері.
+
+---
+
+*© 2026 — навчальний проєкт*

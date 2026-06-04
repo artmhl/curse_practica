@@ -12,7 +12,7 @@ export default function Layout({ children }) {
         {children}
       </main>
       <footer className="text-center text-xs text-gray-400 py-4 border-t border-gray-200">
-        © 2025 ShopReact — навчальний проєкт
+        © 2026 ShopReact — навчальний проєкт
       </footer>
     </div>
   );
